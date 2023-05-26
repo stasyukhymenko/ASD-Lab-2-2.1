@@ -19,29 +19,29 @@ int main() {
 	double resultMath;
 	double measurementError;
 
-	printf("Введіть x: ");
+	printf("Enter x: ");
 	scanf_s("%lf", &x);
-	printf("Введіть кількість повторень (n): ");
+	printf("Enter the number of repetitions (n): ");
 	scanf_s("%d", &n);
 	printf("\n");
 	if (n > 0) {
 		resultMath = cosh(x);
 
 		resultDescent = recursiveDescent(x, n, 1, 1, 1);
-		printf("Результат після обчислення методом рекурсивного спуску: \t\t%lf; Похибка відносно cosh(x): %lf\n\n", resultDescent, resultMath - resultDescent);
+		printf("Result after recursive descent method: \t\t%lf; Measurement error according to cosh(x): %lf\n\n", resultDescent, resultMath - resultDescent);
 
 		resultReturn = recursiveReturn(x, n);
-		printf("Результат після обчислення методом рекурсивного повернення: \t\t%lf; Похибка відносно cosh(x): %lf\n\n", SUMM, resultMath - SUMM);
+		printf("Result after recursive return method: \t\t%lf; Measurement error according to cosh(x): %lf\n\n", SUMM, resultMath - SUMM);
 
 		resultCombined = recursiveCombined(x, 1, n, 1);
-		printf("Результат після обчислення методом рекурсивного спуску та повернення: \t%lf; Похибка відносно cosh(x): %lf\n\n", resultCombined, resultMath - resultCombined);
+		printf("Result after combined method: \t\t\t%lf; Measurement error according to cosh(x): %lf\n\n", resultCombined, resultMath - resultCombined);
 
 		resultLoop = recursiveLoop(x, n);
-		printf("Результат після обчислення за допомогою циклу: \t\t\t\t%lf; Похибка відносно cosh(x): %lf\n\n", resultLoop, resultMath - resultLoop);
+		printf("Result after loop: \t\t\t\t%lf; Measurement error according to cosh(x): %lf\n\n", resultLoop, resultMath - resultLoop);
 
-		printf("Результат після обчислення за допомогою <math.h> (функція cosh(x)): \t%lf\n", resultMath);
+		printf("Result after <math.h> (cosh(x) function): \t%lf\n", resultMath);
 	}
 	else
-		printf("n має бути більше 0");
+		printf("n must be greater than 0");
 	return 1;
 }
