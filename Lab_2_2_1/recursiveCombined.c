@@ -2,10 +2,10 @@
 #include <math.h>
 #include <windows.h>
 
-double summ = 0.0;
+
 
 double recursiveCombined(double x, int i, int n, double product) {
-    
+    double summ = 0.0;
     if (i == n + 1) {
         return summ + 1;
     }
